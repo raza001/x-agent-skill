@@ -1,0 +1,42 @@
+Trending topics vs your niche
+keywords: ship, side project, indie, bootstrapped, MRR, pricing, users, launch, solo developer, build in public ...
+audience: Developers with a day job who want to ship a side project that makes its first money.
+
+ rel  risk   volume   topic                           matched
+ ---  -----  -------  ------------------------------  ------------------------
+  60  -        12.5K  #BuildInPublic                  build in public
+  60  -         8.5K  Indie hackers                   indie
+  60  -         3.1K  SaaS pricing                    pricing
+   0  -          45K  #NewMusicFriday                 -
+   0  -        54.2K  AI agents                       -
+   0  -         120K  Diwali sale                     -
+   0  RISK      210K  Election results                -
+   0  RISK       33K  Factory fire                    -
+   0  -          89K  India vs Australia              -
+   0  -          19K  Payment outage                  -
+
+Relevant (score >= 30): 3 of 10 topics
+
+1. #BuildInPublic   [12.5K posts]
+   angle prompts (write these in your voice, with your own facts):
+   - hot take:  What does your niche get wrong about #BuildInPublic? Take a clear side you can defend.
+   - explainer: What does your audience need to know about #BuildInPublic, in 3 plain points?
+   - personal:  When did #BuildInPublic touch your own work? What happened, with real details?
+
+2. Indie hackers   [8.5K posts]
+   angle prompts (write these in your voice, with your own facts):
+   - hot take:  What does your niche get wrong about Indie hackers? Take a clear side you can defend.
+   - explainer: What does your audience need to know about Indie hackers, in 3 plain points?
+   - personal:  When did Indie hackers touch your own work? What happened, with real details?
+
+3. SaaS pricing   [3.1K posts]
+   angle prompts (write these in your voice, with your own facts):
+   - hot take:  What does your niche get wrong about SaaS pricing? Take a clear side you can defend.
+   - explainer: What does your audience need to know about SaaS pricing, in 3 plain points?
+   - personal:  When did SaaS pricing touch your own work? What happened, with real details?
+
+Risky topics, your call (politics, tragedy, controversy, religion, health):
+  - Election results: politics ('election')
+  - Factory fire: tragedy ('fire')
+
+Keyword matching misses synonyms and context. Scan the zero scores by eye.

@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "notes": "100-point rubric for an X profile. Each check names the profile fields it needs. A field that is missing from the input means 'not provided', and the check is not scored. A field that is present but empty (for example 'bio:' with nothing after it) means the profile has none, and the check scores 0. audit.py implements every check id below; edit points, descriptions and fixes freely, but keep the ids.",
+  "criteria": [
+    {
+      "id": "bio",
+      "name": "Bio clarity",
+      "points": 25,
+      "checks": [
+        {"id": "bio-length", "points": 5, "needs": ["bio"], "desc": "60 to 160 characters (160 is X's limit)", "fix": "Write a bio of 60 to 160 characters: who you help, with what, and one proof point."},
+        {"id": "bio-who-what", "points": 8, "needs": ["bio"], "desc": "Says what you do or who you help", "fix": "Lead the bio with what you do and for whom, e.g. 'I help early-stage founders write landing pages that convert.'"},
+        {"id": "bio-no-buzzwords", "points": 5, "needs": ["bio"], "desc": "No empty labels (passionate, guru, enthusiast, visionary...)", "fix": "Swap labels like 'passionate' or 'guru' for one concrete fact about your work."},
+        {"id": "bio-proof", "points": 4, "needs": ["bio"], "desc": "Contains a proof point: a number, a product or a named result", "fix": "Add one proof point to the bio: a number, a product you built, or a result you got."},
+        {"id": "bio-clean", "points": 3, "needs": ["bio"], "desc": "At most 2 hashtags and 3 emoji", "fix": "Cut the bio down to at most 2 hashtags and 3 emoji so the words carry it."}
+      ]
+    },
+    {
+      "id": "pinned",
+      "name": "Pinned post",
+      "points": 15,
+      "checks": [
+        {"id": "pinned-exists", "points": 4, "needs": ["pinned"], "desc": "A post is pinned", "fix": "Pin your best post: the one that shows a new visitor what they get by following you."},
+        {"id": "pinned-hook", "points": 4, "needs": ["pinned"], "desc": "First line lands in 100 characters without filler", "fix": "Rewrite the pinned post's first line as a hook under 100 characters (see x-post)."},
+        {"id": "pinned-recent", "points": 3, "needs": ["pinned", "pinned_date"], "desc": "Pinned within the last 180 days", "fix": "Refresh the pinned post; one older than 6 months usually no longer shows your best work."},
+        {"id": "pinned-cta", "points": 4, "needs": ["pinned"], "desc": "Ends with an ask: a question, a link or a follow reason", "fix": "End the pinned post with one clear ask: follow for X, read Y, or reply with Z."}
+      ]
+    },
+    {
+      "id": "identity",
+      "name": "Handle and name",
+      "points": 15,
+      "checks": [
+        {"id": "handle-short", "points": 4, "needs": ["handle"], "desc": "Handle is 12 characters or fewer (15 is X's limit)", "fix": "Consider a shorter handle; short handles are easier to remember and mention."},
+        {"id": "handle-clean", "points": 4, "needs": ["handle"], "desc": "No digit strings and at most one underscore", "fix": "Drop digit strings and extra underscores from the handle if you can."},
+        {"id": "name-real", "points": 4, "needs": ["name"], "desc": "Display name has a readable name or brand, 50 characters max", "fix": "Use your real name or brand in the name field, optionally with a short niche keyword."},
+        {"id": "name-clean", "points": 3, "needs": ["name"], "desc": "At most 2 emoji and not all caps", "fix": "Trim the name field to at most 2 emoji and normal capitalisation."}
+      ]
+    },
+    {
+      "id": "banner",
+      "name": "Banner",
+      "points": 10,
+      "checks": [
+        {"id": "banner-set", "points": 4, "needs": ["banner"], "desc": "A custom banner is set", "fix": "Upload a banner (1500x500); the default empty header looks unfinished."},
+        {"id": "banner-message", "points": 6, "needs": ["banner"], "desc": "Banner states your promise or shows proof", "fix": "Put one line on the banner that says what you post about, or show your product or proof."}
+      ]
+    },
+    {
+      "id": "consistency",
+      "name": "Consistency",
+      "points": 10,
+      "checks": [
+        {"id": "consistency-cadence", "points": 4, "needs": ["recent_posts_dated"], "desc": "3 or more posts a week across the recent posts given", "fix": "Post at least 3 times a week at a pace you can keep; x-plan can build the week."},
+        {"id": "consistency-on-topic", "points": 6, "needs": ["recent_posts"], "desc": "60% or more of recent posts are on your niche", "fix": "Keep most recent posts on your niche so new visitors see what you are about."}
+      ]
+    },
+    {
+      "id": "niche",
+      "name": "Niche focus",
+      "points": 15,
+      "checks": [
+        {"id": "niche-single", "points": 5, "needs": ["bio"], "desc": "Bio lists 3 or fewer roles or topics", "fix": "Cut the bio to one main identity; a list of 5 roles says 'no focus'."},
+        {"id": "niche-bio-pinned", "points": 5, "needs": ["bio", "pinned"], "desc": "Pinned post is about the same thing as the bio", "fix": "Pin a post about the topic your bio promises, so the two back each other up."},
+        {"id": "niche-keyword", "points": 5, "needs": ["bio", "keywords"], "desc": "Name or bio uses one of your niche keywords", "fix": "Put your main niche keyword in the name or bio so people searching for it find you."}
+      ]
+    },
+    {
+      "id": "cta",
+      "name": "CTA and link",
+      "points": 10,
+      "checks": [
+        {"id": "link-present", "points": 4, "needs": ["link"], "desc": "Profile has a link", "fix": "Add a link to the one place you want visitors to go: newsletter, product or site."},
+        {"id": "cta-in-bio", "points": 4, "needs": ["bio"], "desc": "Bio tells visitors what to do next", "fix": "End the bio with a short ask that points at the link, e.g. 'Free weekly teardown below'."},
+        {"id": "link-off-x", "points": 2, "needs": ["link"], "desc": "Link goes somewhere other than X itself", "fix": "Point the link off X; linking to another X page wastes the one link slot."}
+      ]
+    }
+  ]
+}

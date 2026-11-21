@@ -1,0 +1,43 @@
+Profile audit: @meera_builds_2024
+score 53 / 100 scored points (53%)
+
+Bio clarity        16/25       (of 25)
+  + bio-length               5/5  110 chars
+  + bio-who-what             8/8  says what you do ('developer')
+  - bio-no-buzzwords         0/5  labels: coffee addict, dreamer, enthusiast, passionate, views my own
+  - bio-proof                0/4  no number, product or result
+  + bio-clean                3/3  0 hashtags, 0 emoji
+Pinned post        4/15        (of 15)
+  + pinned-exists            4/4  pinned post present
+  - pinned-hook              0/4  opens with filler ('Some thoughts')
+  - pinned-recent            0/3  pinned 264 days ago
+  - pinned-cta               0/4  no question, link or follow reason at the end
+Handle and name    7/15        (of 15)
+  - handle-short             0/4  17 chars
+  - handle-clean             0/4  digit string '2024', 2 underscores
+  + name-real                4/4  readable name
+  + name-clean               3/3  0 emoji
+Banner             4/10        (of 10)
+  + banner-set               4/4  custom banner
+  - banner-message           0/6  no promise, product or proof described
+Consistency        8/10        (of 10)
+  - consistency-cadence      2/4  2.6 posts/week (6 posts over 16 days)
+  + consistency-on-topic     6/6  5 of 6 recent posts on your niche keywords
+Niche focus        10/15       (of 15)
+  - niche-single             0/5  5 segments in the bio
+  + niche-bio-pinned         5/5  shared words: build
+  + niche-keyword            5/5  uses 'Shipping'
+CTA and link       4/10        (of 10)
+  + link-present             4/4  https://x.com/meera_builds_2024/highlights
+  - cta-in-bio               0/4  bio has no next step
+  - link-off-x               0/2  links to X itself
+
+Top 3 fixes
+1. [Banner, -6] Put one line on the banner that says what you post about, or show your product or proof.
+   now: no promise, product or proof described
+2. [Bio clarity, -5] Swap labels like 'passionate' or 'guru' for one concrete fact about your work.
+   now: labels: coffee addict, dreamer, enthusiast, passionate, views my own
+3. [Niche focus, -5] Cut the bio to one main identity; a list of 5 roles says 'no focus'.
+   now: 5 segments in the bio
+
+Heuristic checks on text you pasted. Judge the banner and tone by eye too.

@@ -1,0 +1,68 @@
+rank  score  spec  gap  brev  conc  clar  formula              hook
+----  -----  ----  ---  ----  ----  ----  -------------------  ----------------------------------
+   1     81    13   10    18    20    20  number-list          7 pricing mistakes I made in my...
+   2     77     8   19    18    12    20  result-in-timeframe  I tripled my app's price and lo...
+   3     67     8   19    20     0    20  how-to               How to price your side project ...
+   4     64    10   14    20     0    20  question             What's the smallest thing you c...
+   5     60     8   12    20     0    20  curiosity-gap        Nobody talks about how boring t...
+   6     48     8    0    20     0    20  one-liner            So I've been thinking about pri...
+   7     38     0    0    18     0    20  -                    Some thoughts on things that mi...
+   8     36     8    0    18     0    10  -                    This game-changer will revoluti...
+
+#1  81/100  "7 pricing mistakes I made in my first 2 years of selling software:"
+    specificity 13/20  has a timeframe (first 2 years)
+    curiosity   10/20  ends on ':', promising a payoff
+    brevity     18/20  13 words, 66 chars: fits in the first 100 characters
+    concrete    20/20  numbers: 7, 2; concrete noun (years)
+    clarity     20/20  plain words, one idea
+
+#2  77/100  "I tripled my app's price and lost zero users. Here's what I changed:"
+    specificity  8/20  no audience, timeframe or named thing
+    curiosity   19/20  open loop ('Here's what'); ends on ':', promising a payoff; tension word ('lost')
+    brevity     18/20  13 words, 68 chars: fits in the first 100 characters
+    concrete    12/20  number written as a word ('zero'); concrete noun (users)
+    clarity     20/20  plain words, one idea
+
+#3  67/100  "How to price your side project without guessing:"
+    specificity  8/20  no audience, timeframe or named thing
+    curiosity   19/20  open loop ('How'); ends on ':', promising a payoff; tension word ('without')
+    brevity     20/20  8 words, 48 chars: fits in the first 100 characters
+    concrete     0/20  no number and no tangible noun
+    clarity     20/20  plain words, one idea
+
+#4  64/100  "What's the smallest thing you could ship tonight?"
+    specificity 10/20  has a timeframe (tonight); vague: 'thing'
+    curiosity   14/20  open loop ('What'); asks a question
+    brevity     20/20  8 words, 49 chars: fits in the first 100 characters
+    concrete     0/20  no number and no tangible noun
+    clarity     20/20  plain words, one idea
+
+#5  60/100  "Nobody talks about how boring the middle of a project is."
+    specificity  8/20  no audience, timeframe or named thing
+    curiosity   12/20  open loop ('Nobody')
+    brevity     20/20  11 words, 57 chars: fits in the first 100 characters
+    concrete     0/20  no number and no tangible noun
+    clarity     20/20  plain words, one idea
+
+#6  48/100  "So I've been thinking about pricing lately"
+    specificity  8/20  no audience, timeframe or named thing
+    curiosity    0/20  filler opener ('So') delays the point
+    brevity     20/20  7 words, 42 chars: fits in the first 100 characters
+    concrete     0/20  no number and no tangible noun
+    clarity     20/20  plain words, one idea
+
+#7  38/100  "Some thoughts on things that might help with growth and stuff"
+    specificity  0/20  vague: 'Some', 'things', 'stuff'; hedges: 'might'
+    curiosity    0/20  filler opener ('Some thoughts') delays the point
+    brevity     18/20  11 words, 61 chars: fits in the first 100 characters
+    concrete     0/20  abstract: 'things', 'growth', 'stuff'
+    clarity     20/20  plain words, one idea
+
+#8  36/100  "This game-changer will revolutionize how you think about success"
+    specificity  8/20  no audience, timeframe or named thing
+    curiosity    0/20  open loop ('how'); clickbait costs trust ('game-changer')
+    brevity     18/20  10 words, 64 chars: fits in the first 100 characters
+    concrete     0/20  abstract: 'success'
+    clarity     10/20  jargon: 'game-changer', 'revolutionize'; long word 'revolutionize'
+
+Heuristic scores. They rank hooks against each other; they do not predict reach.

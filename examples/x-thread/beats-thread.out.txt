@@ -1,0 +1,23 @@
+Thread: 5 posts, 91 words, about 23 s to read  (mode: check)
+================================================================
+[1/5]  38/280 chars  check
+    1/5 A thread on pricing your first app
+  ! short (34 chars): merge it or make it land harder
+  ! weak opener ('A thread'): the hook must carry post 1
+----------------------------------------------------------------
+[2/5]  131/280 chars  ok
+    2/5 Most indie devs price by fear. They pick the lowest number that doesn't feel embarrassing, then wonder why revenue never moves.
+----------------------------------------------------------------
+[3/5]  16/280 chars  check
+    3/5 Also, cheap.
+  ! short (12 chars): merge it or make it land harder
+  ! weak opener ('Also,'): start with the point
+----------------------------------------------------------------
+[4/5]  170/280 chars  ok
+    4/5 Ask your longest-paying users what they would use if your app vanished. Whatever they name, and whatever it costs, is your real competitor and your real price anchor.
+----------------------------------------------------------------
+[5/5]  177/280 chars  check
+    5/5 Raise the price for new users only. Let existing users keep their price for life. You keep their goodwill and test the new number on people with no old price in their heads.
+  ! no CTA in the last post: ask a question, point to a resource, or invite a follow
+----------------------------------------------------------------
+3 of 5 posts flagged.

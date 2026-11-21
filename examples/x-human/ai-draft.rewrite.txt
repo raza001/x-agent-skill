@@ -1,0 +1,9 @@
+Most developers I know have a side project folder full of things that never shipped. Mine had 4.
+
+What changed: I stopped planning and gave myself 1 rule. Ship something every night, even if it's ugly.
+
+You don't need a perfect idea. Pick the problem that annoys you most, use the tools you already know, and put a small version live this week.
+
+Feedback from 10 real users beats 6 months of research.
+
+What's the smallest thing you could ship tonight?

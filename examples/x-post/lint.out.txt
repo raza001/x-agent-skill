@@ -1,0 +1,42 @@
+Draft 1 of 3  --------------------------------------------------
+  length     223/280  OK
+  lines      7 (3 blank)
+  hashtags   0    mentions 0    emoji 0
+  fold       first line 63 chars | I shipped my first paid app in 41 days, working 1 hour a night. / No funding. No team. One rule: shi
+  hook       result-in-timeframe (Result + timeframe)
+  ends with  a question or CTA
+  verdict    PASS
+
+Draft 2 of 3  --------------------------------------------------
+  length     375/280  OVER  (1 URL counted as 23 each)
+  lines      1 (0 blank)
+  hashtags   4    mentions 0    emoji 0
+  fold       first line 375 chars | THIS IS HUGE!!! Everyone NEEDS to see this. After months and months of building, iterating, testing 
+  hook       no formula matched
+  ends with  no ask
+  ERROR      Too long: 375/280 characters as X counts them (95 over).
+  warn       4 hashtags. More than 2 tends to read as spam on X.
+  warn       Wall of text: 375 characters with no line breaks. Break it after
+             the hook.
+  warn       All caps: 3 shouted words (THIS, HUGE, NEEDS). Use one at most.
+  warn       Uses "game-changer", which is on your 'Words I never use' list.
+  warn       4 hashtags; voice.md hashtag policy allows 0.
+  info       First line runs 375 characters; the first sentence fits in 100.
+  info       No formula in hooks.json matches the first line. Not an error;
+             check that the opener still earns the read.
+  verdict    FAIL
+
+Draft 3 of 3  --------------------------------------------------
+  length     219/280  OK
+  lines      5 (2 blank)
+  hashtags   0    mentions 0    emoji 0
+  fold       first line 43 chars | So I've been thinking about pricing lately. / Why do so many indie devs charge $5 a month when their
+  hook       one-liner (One-liner)
+  ends with  no ask
+  warn       Missing hook: opens with filler ("So"). Lead with the point.
+  warn       Question with no CTA: you ask a question earlier but the post
+             ends without an ask. Close with one direct question or CTA, or
+             turn the opening question into a statement.
+  verdict    WARN
+
+3 draft(s): 1 PASS, 1 WARN, 1 FAIL
