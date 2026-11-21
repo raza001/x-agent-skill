@@ -14,10 +14,11 @@ run the script from this folder instead (for example
 
 ## Before you start
 
-Read `voice.md` first. If it is missing, ask the user to create it from
-`templates/voice.md`, or offer to generate it from 3 of their posts: ask them
-to paste the posts, fill each section from what the posts actually show, mark
-anything you inferred as a guess, and have the user confirm before you save it.
+Get the voice profile first: run `python3 skills/x-voice/voice.py find` and
+use the path it prints wherever a command below says `<voice-path>`. If it
+finds none, create one automatically with `python3 skills/x-voice/voice.py init`
+and fill it in with the user as the x-voice skill describes. The user can also
+copy the template by hand. Drafts must follow its vocabulary, banned words, emoji, hashtags and language.
 
 ## Inputs
 
@@ -50,7 +51,7 @@ anything you inferred as a guess, and have the user confirm before you save it.
    and a list or steps. Put a line containing only `---` between drafts.
 5. **Lint them.**
    ```bash
-   python3 skills/x-post/lint.py drafts.txt --voice voice.md
+   python3 skills/x-post/lint.py drafts.txt --voice <voice-path>
    ```
    Fix every ERROR. Fix every warning unless voice.md says otherwise, and say
    why you kept it. Re-run until no draft is FAIL.

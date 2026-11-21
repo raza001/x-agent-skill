@@ -15,9 +15,11 @@ run the script from this folder instead (for example
 
 ## Before you start
 
-Read `voice.md` first. Rewrites must sound like the user, and its niche
-keywords feed the niche checks. If it is missing, ask the user to create it
-from `templates/voice.md`, or offer to generate it from 3 of their posts.
+Get the voice profile first: run `python3 skills/x-voice/voice.py find` and
+use the path it prints wherever a command below says `<voice-path>`. If it
+finds none, create one automatically with `python3 skills/x-voice/voice.py init`
+and fill it in with the user as the x-voice skill describes. The user can also
+copy the template by hand. Rewrites must sound like the user, and its niche keywords feed the niche checks.
 
 ## Inputs
 
@@ -55,7 +57,7 @@ recent_posts:
    arrange it into the keys yourself without adding anything.
 2. **Score it.**
    ```bash
-   python3 skills/x-profile/audit.py profile.txt --voice voice.md
+   python3 skills/x-profile/audit.py profile.txt --voice <voice-path>
    ```
    Use `--keywords "a, b"` if there is no voice.md.
 3. **Check what was not scored** and say so. Never fill a gap with a guess.

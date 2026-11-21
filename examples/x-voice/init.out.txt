@@ -1,0 +1,10 @@
+A:\ai skill\x.com\x-agent-skill\examples\x-voice\voice.generated.md
+where:  custom path
+  - created from the template
+  - added 3 posts to 'Example posts'
+  - noted under 'Emoji policy': no emoji in any of your 3 posts
+  - noted under 'Hashtag policy': no hashtags in any of your 3 posts
+  - noted under 'Language': Hindi words in Latin script (Hinglish) in 1 of 3 posts
+  - noted under 'Call-to-action style': 1 of 3 posts end with a question; median length 112 characters
+filled: 1 of 11 sections
+next:   answer these sections: Niche, Audience, Tone, Words I use, Words I never use, Topics to avoid, Emoji policy, Hashtag policy, Language, Call-to-action style

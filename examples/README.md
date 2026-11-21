@@ -20,6 +20,8 @@ Windows, use `python` instead of `python3`.
 | angles.py | `x-trending/trending.txt` | `python3 skills/x-trending/angles.py examples/x-trending/trending.txt --voice examples/voice.md` | `x-trending/angles.out.txt` |
 | stats.py | `x-stats/posts.csv` | `python3 skills/x-stats/stats.py examples/x-stats/posts.csv` | `x-stats/stats.out.txt` |
 | fetch_api.py (dry run) | `x-stats/post-ids.txt` | `python3 skills/x-stats/fetch_api.py metrics --ids-file examples/x-stats/post-ids.txt` | `x-stats/fetch_api-dryrun.out.txt` |
+| voice.py init | `x-voice/my-posts.txt` | `python3 skills/x-voice/voice.py init --path examples/x-voice/voice.generated.md --posts examples/x-voice/my-posts.txt` | `x-voice/init.out.txt`, `x-voice/voice.generated.md` |
+| voice.py find | `voice.md` | `python3 skills/x-voice/voice.py find --path examples/voice.md` | `x-voice/find.out.txt` |
 | audit.py | `x-profile/profile.txt` | `python3 skills/x-profile/audit.py examples/x-profile/profile.txt --voice examples/voice.md --today 2026-11-21` | `x-profile/audit.out.txt` |
 
 Notes:

@@ -14,9 +14,11 @@ run the script from this folder instead (for example
 
 ## Before you start
 
-Read `voice.md` first. If it is missing, ask the user to create it from
-`templates/voice.md`, or offer to generate it from 3 of their posts (fill it
-from what the posts show, mark guesses, and have the user confirm).
+Get the voice profile first: run `python3 skills/x-voice/voice.py find` and
+use the path it prints wherever a command below says `<voice-path>`. If it
+finds none, create one automatically with `python3 skills/x-voice/voice.py init`
+and fill it in with the user as the x-voice skill describes. The user can also
+copy the template by hand. The thread must follow its vocabulary, banned words, emoji, hashtags and language.
 
 ## Inputs
 

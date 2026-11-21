@@ -17,9 +17,11 @@ pass `--hooks PATH`.
 
 ## Before you start
 
-Read `voice.md` first, so the niche and audience shape which posts matter.
-If it is missing, ask the user to create it from `templates/voice.md`, or
-offer to generate it from 3 of their posts.
+Get the voice profile first: run `python3 skills/x-voice/voice.py find` and
+use the path it prints wherever a command below says `<voice-path>`. If it
+finds none, create one automatically with `python3 skills/x-voice/voice.py init`
+and fill it in with the user as the x-voice skill describes. The user can also
+copy the template by hand. Its niche and audience decide which posts matter.
 
 ## Inputs
 

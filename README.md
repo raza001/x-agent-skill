@@ -14,7 +14,7 @@ until you publish it yourself.
 
 ## What this is
 
-- 9 skills. Each is a set of instructions an agent follows, plus small Python
+- 10 skills. Each is a set of instructions an agent follows, plus small Python
   scripts that do the counting and checking, so results do not depend on the
   model's arithmetic.
 - Local. The core scripts use only the Python 3.9+ standard library, make no
@@ -36,6 +36,7 @@ until you publish it yourself.
 
 | Skill | What it does | Try saying | Scripts |
 | --- | --- | --- | --- |
+| `x-voice` | Creates your voice profile automatically and fills it from your posts | "Set up my voice" | `voice.py`, `voice-template.md` |
 | `x-post` | Drafts one post: 5 hooks scored, 3 variants linted | "Write a post about raising my prices" | `lint.py`, `hookscore.py`, `hooks.json` |
 | `x-thread` | Turns a topic or long text into a numbered thread and checks it | "Turn this newsletter into a thread" | `beats.py` |
 | `x-human` | Removes AI tells: invisible characters, typography, stock phrases | "Does this sound like AI? Clean it up" | `humanize.py`, `detect.py`, `slop.json` |
@@ -60,7 +61,7 @@ until you publish it yourself.
     of running Python.
 - **Node.js**, only for the one-command install below (it provides `npx`).
 
-Install **all 9 skills together**. `x-viral` and `x-stats` read
+Install **all 10 skills together**. `x-viral` and `x-stats` read
 `x-post/hooks.json`, and the skills hand off to each other.
 
 ### Option 1: one command (macOS, Linux and Windows)
@@ -76,7 +77,7 @@ npx skills add raza001/x-agent-skill -g -a claude-code -s "*" -y --copy
 | --- | --- |
 | `-g` | Installs for your user, so the skills work in every project. Without it, they go into the folder you ran the command from. |
 | `-a claude-code` | Installs for Claude Code only. |
-| `-s "*"` | Installs all 9 skills. |
+| `-s "*"` | Installs all 10 skills. |
 | `-y` | Skips the prompts. |
 | `--copy` | Puts real files in the Claude folder instead of links. |
 
@@ -121,10 +122,10 @@ Keep them current, or remove them:
 ```bash
 npx skills list -g
 npx skills update -g -y
-npx skills remove x-post x-thread x-human x-viral x-trending x-stats x-profile x-reply x-plan -g -a claude-code -y
+npx skills remove x-post x-thread x-human x-viral x-trending x-stats x-profile x-reply x-plan x-voice -g -a claude-code -y
 ```
 
-The remove command names the 9 skills on purpose. Do not use `-s "*"` with
+The remove command names the 10 skills on purpose. Do not use `-s "*"` with
 `remove`: it would delete every global skill you have, not just these.
 
 ### Option 2: manual install (git clone and copy)
@@ -157,7 +158,7 @@ the folders inside `skills/` into the folder for your tool.
 
 ### Other tools
 
-Copy the same 9 folders into your tool's skills folder:
+Copy the same 10 folders into your tool's skills folder:
 
 | Tool | macOS / Linux | Windows |
 | --- | --- | --- |
@@ -181,26 +182,74 @@ elsewhere, the agent runs the same script from the installed folder.
 
 ## Set up your voice
 
-Every skill reads `voice.md` before it writes anything.
+Every skill reads `voice.md` before it writes anything. It holds your niche,
+audience, tone (3 adjectives), words you use, words you never use, 3 to 5 of
+your real posts, topics to avoid, emoji and hashtag policy, language
+(English, Hindi or Hinglish) and call-to-action style.
+
+### Automatic (default)
+
+You don't need to copy anything. The first time any x-* skill runs, it
+checks for `voice.md`. If there isn't one, it creates one from the built-in
+template, fills in what it can from your posts, and asks you to confirm the
+rest. You can also start it yourself by telling your agent "set up my
+voice". Behind the scenes it runs:
 
 ```bash
-cp x-agent-skill/templates/voice.md ./voice.md
+python3 skills/x-voice/voice.py find                       # where is it, what is empty
+python3 skills/x-voice/voice.py init                       # create it if missing
+python3 skills/x-voice/voice.py init --posts my-posts.txt  # add your real posts
 ```
 
-Fill it in: niche, audience, tone (3 adjectives), words you use, words you
-never use, 3 to 5 of your real posts, topics to avoid, emoji and hashtag
-policy, language (English, Hindi or Hinglish) and call-to-action style. Keep
-it in the folder you run your agent from. `voice.md` is listed in
-`.gitignore`, so your filled-in copy is not committed by accident.
+Where it is saved, and the order the skills look in:
 
-If `voice.md` is missing, each skill asks you to create it, or offers to
-draft one from 3 of your posts for you to confirm. A filled example for a
-fictional creator is in [examples/voice.md](examples/voice.md).
+| Order | Location | Used |
+| --- | --- | --- |
+| 1 | `voice.md` in the current folder | for that project only |
+| 2 | macOS / Linux: `~/.x-agent-skill/voice.md` <br> Windows: `C:\Users\<you>\.x-agent-skill\voice.md` | everywhere (the default) |
+
+`init` creates the global one (2). Add `--here` to create a per-project one
+(1) instead. It never overwrites an existing file.
+
+### Manual (if you prefer)
+
+Copy the template yourself and fill it in with any text editor.
+
+After `npx skills add`, the template is installed with the x-voice skill:
+
+```bash
+# macOS / Linux
+mkdir -p ~/.x-agent-skill
+cp ~/.claude/skills/x-voice/voice-template.md ~/.x-agent-skill/voice.md
+```
+
+```powershell
+# Windows PowerShell
+New-Item -ItemType Directory -Force "$HOME\.x-agent-skill" | Out-Null
+Copy-Item "$HOME\.claude\skills\x-voice\voice-template.md" "$HOME\.x-agent-skill\voice.md"
+```
+
+```bat
+:: Windows Command Prompt
+mkdir "%USERPROFILE%\.x-agent-skill"
+copy "%USERPROFILE%\.claude\skills\x-voice\voice-template.md" "%USERPROFILE%\.x-agent-skill\voice.md"
+```
+
+From a clone of this repo, for a per-project file:
+
+```bash
+cp x-agent-skill/skills/x-voice/voice-template.md ./voice.md
+```
+
+`voice.md` is listed in `.gitignore`, so a per-project copy is not committed
+by accident. A filled example for a fictional creator is in
+[examples/voice.md](examples/voice.md).
 
 ## Script reference
 
 Every script has `--help`, reads a file or stdin, prints readable text, and
-accepts `--json`.
+accepts `--json`. Where an example says `--voice voice.md`, use the path that
+`python3 skills/x-voice/voice.py find` prints.
 
 | Script | Example | What it prints |
 | --- | --- | --- |
@@ -213,6 +262,7 @@ accepts `--json`.
 | `x-trending/angles.py` | `python3 skills/x-trending/angles.py trending.txt --voice voice.md` | Relevance scores, risk flags, angle prompts |
 | `x-stats/stats.py` | `python3 skills/x-stats/stats.py posts.csv` | Engagement rate, ranking, medians, best and worst, top-vs-rest findings |
 | `x-profile/audit.py` | `python3 skills/x-profile/audit.py profile.txt --voice voice.md` | Rubric score per check and the top 3 fixes |
+| `x-voice/voice.py` | `python3 skills/x-voice/voice.py init --posts my-posts.txt` | Where your voice.md is, which sections are empty; creates it if missing |
 | `x-stats/fetch_api.py` | `python3 skills/x-stats/fetch_api.py trends --woeid 1` | Optional, see below. Dry run unless `--live` |
 
 [examples/](examples/) has a sample input and the real output for every
@@ -273,8 +323,9 @@ grep -rnE "^\s*(import|from)\s+(urllib|http|requests|socket)" skills/
 ## Privacy
 
 Everything runs on your machine, and there is no telemetry. The scripts read
-the files you point them at and print to your terminal. Your `voice.md`, and
-`drafts/` and `data/` folders, are git-ignored by default.
+the files you point them at and print to your terminal. Your global
+`voice.md` lives in `~/.x-agent-skill/`, outside any repo. A per-project
+`voice.md`, and `drafts/` and `data/` folders, are git-ignored by default.
 
 ## Limits
 
@@ -299,7 +350,6 @@ x-agent-skill/
 ├── README.md
 ├── LICENSE
 ├── .gitignore
-├── templates/voice.md
 ├── skills/
 │   ├── x-post/        SKILL.md, lint.py, hooks.json, hookscore.py
 │   ├── x-thread/      SKILL.md, beats.py
@@ -309,7 +359,8 @@ x-agent-skill/
 │   ├── x-stats/       SKILL.md, stats.py, fetch_api.py (optional)
 │   ├── x-profile/     SKILL.md, rubric.json, audit.py
 │   ├── x-reply/       SKILL.md
-│   └── x-plan/        SKILL.md
+│   ├── x-plan/        SKILL.md
+│   └── x-voice/       SKILL.md, voice.py, voice-template.md
 └── examples/          sample inputs and outputs for every script
 ```
 

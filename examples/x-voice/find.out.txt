@@ -1,0 +1,4 @@
+A:\ai skill\x.com\x-agent-skill\examples\voice.md
+where:  custom path
+filled: 11 of 11 sections
+empty:  none, ready to use

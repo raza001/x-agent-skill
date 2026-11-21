@@ -14,10 +14,12 @@ run the script from this folder instead (for example
 
 ## Before you start
 
-Read `voice.md` first: the niche, 'Words I use', audience and 'Topics to
-avoid' drive the filter. If it is missing, ask the user to create it from
-`templates/voice.md`, or offer to generate it from 3 of their posts. Without
-it, ask for 5 to 10 niche keywords.
+Get the voice profile first: run `python3 skills/x-voice/voice.py find` and
+use the path it prints wherever a command below says `<voice-path>`. If it
+finds none, create one automatically with `python3 skills/x-voice/voice.py init`
+and fill it in with the user as the x-voice skill describes. The user can also
+copy the template by hand. Its niche, 'Words I use', audience and 'Topics to avoid' drive the filter.
+If the user declines a profile, ask for 5 to 10 niche keywords instead.
 
 ## Inputs
 
@@ -45,7 +47,7 @@ it, ask for 5 to 10 niche keywords.
    the pasted text and save it yourself, unchanged.
 2. **Score it.**
    ```bash
-   python3 skills/x-trending/angles.py trending.txt --voice voice.md
+   python3 skills/x-trending/angles.py trending.txt --voice <voice-path>
    ```
    Add `--keywords "a, b, c"` to widen the filter, or `--min 20` to see more.
 3. **Second pass by eye.** Keyword matching misses synonyms. Read the

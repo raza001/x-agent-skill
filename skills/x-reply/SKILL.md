@@ -14,10 +14,11 @@ use `python` or `py -3`.
 
 ## Before you start
 
-Read `voice.md` first: the tone, vocabulary, banned words, language and
-topics to avoid all apply to replies. If it is missing, ask the user to
-create it from `templates/voice.md`, or offer to generate it from 3 of their
-posts.
+Get the voice profile first: run `python3 skills/x-voice/voice.py find` and
+use the path it prints wherever a command below says `<voice-path>`. If it
+finds none, create one automatically with `python3 skills/x-voice/voice.py init`
+and fill it in with the user as the x-voice skill describes. The user can also
+copy the template by hand. Its tone, vocabulary, banned words, language and topics to avoid apply to replies.
 
 ## Inputs
 
@@ -54,7 +55,7 @@ posts.
    the limit. Optional length check (put a line containing only `---`
    between options):
    ```bash
-   python3 skills/x-post/lint.py replies.txt --voice voice.md
+   python3 skills/x-post/lint.py replies.txt --voice <voice-path>
    ```
    Hook warnings matter less for replies; length, all-caps and banned
    words still apply.
