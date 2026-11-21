@@ -1,0 +1,14 @@
+detect.py  (heuristic, not proof)
+file: examples/x-human/ai-draft.txt   (102 words, 10 sentences)
+
+  check          score  detail
+  BURSTINESS      100   sentence-length variation CV 0.73 (varied)
+  SPECIFICITY      20   0.0 concrete markers per 100 words (0 numbers, 0 names, 0 handles)
+  SLOP DENSITY      0   12 stock phrases (in today’s fast-paced world, it’s important to note that, let that sink in, the journey of...)
+  FINGERPRINT       0   5 invisible chars, 2 em dashes, 6 curly quotes (phones add these; low weight)
+  VOICE            18   6 contractions, first/second person, 6 structural tells (not-just-but, em-dash-overuse, rhetorical-reveal)
+
+  overall 17   verdict REWRITE   weakest: SLOP DENSITY
+  (overall = 60% mean + 40% weakest check; PASS needs 70+ with no check under 55)
+
+Heuristic only: 5 surface signals, tuned for English. This is not proof of authorship and does not predict any commercial detector's verdict.

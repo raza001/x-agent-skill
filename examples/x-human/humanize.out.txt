@@ -1,0 +1,38 @@
+wrote examples/x-human/ai-draft.clean.txt
+humanize.py report
+================================================================
+invisible characters  5 removed  (byte order mark / zero width no-break space x1, zero width space x1, soft hyphen x1, no-break space x1, word joiner x1)
+typography            8 fixed  (curly single quote x6, em dash x2) (dashes -> comma)
+stock phrases         12 flagged, 10 applied
+  line 1   "In today's fast-paced world"      -> delete               [filler, applied]
+  line 1   "game-changer"                     -> "big help"           [hype, rewrite by hand]
+  line 5   "It's important to note that"      -> delete               [filler, applied]
+  line 5   "delve into"                       -> "look at"            [ai-tell, applied]
+  line 5   "leverage"                         -> "use"                [corporate, applied]
+  line 5   "embark on"                        -> "start"              [ai-tell, applied]
+  line 5   "the journey of"                   -> delete               [ai-tell, rewrite by hand]
+  line 7   "Furthermore"                      -> "also"               [ai-tell, applied]
+  line 7   "fosters"                          -> "builds"             [ai-tell, applied]
+  line 7   "robust"                           -> "solid"              [corporate, applied]
+  line 7   "revolutionize"                    -> "change"             [hype, applied]
+  line 9   "Let that sink in"                 -> delete               [x-tell, applied]
+structural tells      6 flagged (never auto-fixed; rewrite these lines)
+  not-just-but  x1  "It's not just X, it's Y"
+      line 1   "isn't just a hobby — it's"
+      fix: Say the one thing it is.
+  em-dash-overuse  x2  Em dash overuse
+      line 1   "—"
+      line 7   "—"
+      fix: Use a period, a comma, or a colon. humanize.py converts them.
+  rhetorical-reveal  x1  One-word rhetorical question
+      line 3   ". The result?"
+      fix: State the result directly.
+  staged-colon  x1  Staged colon reveal
+      line 3   "Here's the thing:"
+      fix: Delete the setup and start with the point.
+  hashtag-wall  x1  Hashtag wall
+      line 12  "#buildinpublic #indiehackers #coding"
+      fix: Keep one hashtag at most, or none.
+  engagement-bait  x1  Engagement bait
+      line 11  "Follow for more"
+      fix: Ask one real question, or end without an ask.

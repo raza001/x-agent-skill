@@ -1,0 +1,4 @@
+# One post ID or post URL per line. Used by fetch_api.py metrics --ids-file.
+# These are made-up IDs for the dry-run example.
+1850000000000000001
+https://x.com/i/web/status/1850000000000000002

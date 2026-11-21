@@ -1,0 +1,21 @@
+detect.py  (heuristic, not proof)
+A: examples/x-human/ai-draft.txt   (102 words)
+B: examples/x-human/ai-draft.rewrite.txt   (81 words)
+
+  check                A        B   change
+  BURSTINESS         100       76   -24
+  SPECIFICITY         20       99   +79
+  SLOP DENSITY         0      100   +100
+  FINGERPRINT          0      100   +100
+  VOICE               18      100   +82
+  OVERALL             17       87   +70
+  verdict        REWRITE     PASS
+
+  B detail:
+    BURSTINESS    sentence-length variation CV 0.52 (varied)
+    SPECIFICITY   4.9 concrete markers per 100 words (4 numbers, 0 names, 0 handles)
+    SLOP DENSITY  no stock phrases from slop.json
+    FINGERPRINT   clean typography
+    VOICE         3 contractions, first/second person, no structural tells
+
+Heuristic only: 5 surface signals, tuned for English. This is not proof of authorship and does not predict any commercial detector's verdict.

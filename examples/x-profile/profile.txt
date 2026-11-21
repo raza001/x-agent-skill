@@ -1,0 +1,16 @@
+name: Meera | shipping small apps
+handle: @meera_builds_2024
+bio: Passionate developer and coffee addict | tech enthusiast | dreamer | building stuff on weekends | views my own
+location: Pune, India
+link: https://x.com/meera_builds_2024/highlights
+banner: Plain dark blue gradient, no text.
+pinned_date: 2026-03-02
+pinned:
+Some thoughts on building apps as a solo dev and what I learned along the way.
+recent_posts:
+2026-10-01 | I shipped my first paid app in 41 days, working 1 hour a night.
+2026-10-04 | 7 pricing mistakes I made in my first 2 years of selling software:
+2026-10-05 | Anyone else spend more time on the landing page than the app?
+2026-10-09 | I tripled my price and lost zero users. Here's what I changed:
+2026-10-12 | Watched the cricket match all night, what a finish
+2026-10-16 | 3 emails that brought back churned users (copy them):

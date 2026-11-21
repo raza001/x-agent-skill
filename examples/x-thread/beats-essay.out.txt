@@ -1,0 +1,26 @@
+Thread: 7 posts, 208 words, about 52 s to read  (mode: split)
+================================================================
+[1/7]  96/280 chars  ok
+    I tripled the price of my side project and lost zero users. Here's what I changed, in order. 1/7
+----------------------------------------------------------------
+[2/7]  178/280 chars  ok
+    For two years the app cost $3 a month. I picked that number because it felt safe. Nobody complained, which I took as a good sign. It wasn't. It meant the price was invisible. 2/7
+----------------------------------------------------------------
+[3/7]  203/280 chars  ok
+    The first thing I did was talk to the 12 people who had paid the longest. I asked one question: what would you use if this app disappeared tomorrow? Nine of them named a tool that cost more than $10. 3/7
+----------------------------------------------------------------
+[4/7]  197/280 chars  check
+    Additionally, I looked at what they actually used. Almost nobody touched the features I was proudest of. Everyone used the weekly summary email. So I made that the headline of the pricing page. 4/7
+  ! weak opener ('Additionally,'): start with the point
+----------------------------------------------------------------
+[5/7]  153/280 chars  ok
+    Then I raised the price to $9 for new users only. Existing users kept $3 for life. That one decision removed every angry email before it was written. 5/7
+----------------------------------------------------------------
+[6/7]  187/280 chars  ok
+    Four weeks later, sign-ups were flat, not down. Revenue per new user was three times higher. Two old users asked to switch to the new price because they wanted to support the project. 6/7
+----------------------------------------------------------------
+[7/7]  108/280 chars  check
+    The lesson I keep relearning: your price is a message. A low price says you are not sure it is worth it. 7/7
+  ! no CTA in the last post: ask a question, point to a resource, or invite a follow
+----------------------------------------------------------------
+2 of 7 posts flagged.

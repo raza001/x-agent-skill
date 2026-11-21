@@ -1,0 +1,4 @@
+DRY RUN: no network call was made. Add --live to send this request.
+  GET https://api.x.com/2/tweets?ids=1850000000000000001%2C1850000000000000002&tweet.fields=public_metrics%2Ccreated_at%2Ctext
+  Authorization: Bearer <X_BEARER_TOKEN from the environment, currently NOT set>
+Check API access and pricing in the X developer portal before using --live.

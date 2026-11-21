@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Secrets. The optional API script reads X_BEARER_TOKEN from the environment.
+# Never commit a token, even in a dotenv file.
+.env
+.env.*
+*.token
+
+# Local agent/editor settings and optional plugin packaging (not needed to
+# use the skills).
+.claude/
+.claude-plugin/
+
+# Your personal files. Keep your filled-in voice profile and your own data out
+# of the repo; the template and the example stay tracked.
+voice.md
+!templates/voice.md
+!examples/voice.md
+drafts/
+data/
+*.private.*
+
+# OS
+.DS_Store
+Thumbs.db

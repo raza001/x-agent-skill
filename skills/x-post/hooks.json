@@ -1,0 +1,231 @@
+{
+  "version": 1,
+  "notes": "Hook formulas for X posts. 'match' is a Python regular expression tested case-insensitively against the first non-empty line of a post. Order matters: classifiers (lint.py, hookscore.py, swipe.py, stats.py) take the first formula that matches, so specific formulas come before generic ones. Edit, reorder or add your own. A formula is a starting shape, not a guarantee.",
+  "formulas": [
+    {
+      "id": "result-in-timeframe",
+      "name": "Result + timeframe",
+      "template": "I {got a specific result} in {timeframe}. Here's exactly how:",
+      "example": "I went from 0 to 4,000 newsletter subscribers in 90 days. Here's exactly how:",
+      "purpose": "Leads with proof, so the reader trusts the steps that follow.",
+      "failure_mode": "Reads as a brag, or as made up, when the number is round and unverifiable or the steps are generic.",
+      "match": "^\\s*i\\s+(went from|grew|made|hit|got|built|gained|earned|doubled|tripled|reached|sold|landed|booked|shipped|signed)\\b"
+    },
+    {
+      "id": "failure-lesson",
+      "name": "Failure + lesson",
+      "template": "I {failed at something specific}. Here's what it taught me:",
+      "example": "I lost my biggest client last month. It was my fault, and the fix took one email.",
+      "purpose": "Vulnerability earns attention, and a lesson pays it back.",
+      "failure_mode": "Humblebrag dressed as failure, or a lesson so vague it could follow any story.",
+      "match": "^\\s*i\\s+(lost|failed|got fired|got rejected|quit|wasted|burned|blew|almost lost|messed up|screwed up|bombed|was wrong)\\b"
+    },
+    {
+      "id": "before-after",
+      "name": "Before / after",
+      "template": "{Time} ago I {bad state}. Today I {good state}.",
+      "example": "2 years ago I couldn't write a tweet without deleting it 5 times. Today I post daily in 10 minutes.",
+      "purpose": "A visible gap makes the reader want the bridge between the two states.",
+      "failure_mode": "The 'after' sounds like an ad, or there is no bridge in the rest of the post.",
+      "match": "\\b(\\d+|a|one|two|three|four|five|six|ten|few)\\s+(years?|months?|weeks?|days?)\\s+ago\\b"
+    },
+    {
+      "id": "story-open",
+      "name": "Story in a moment",
+      "template": "{Specific moment}, {unexpected thing happened}.",
+      "example": "Last Tuesday a stranger replied to my post and offered me a job.",
+      "purpose": "Drops the reader into a scene; people finish stories they start.",
+      "failure_mode": "Slow scene-setting with no tension in the first line.",
+      "match": "^\\s*(in (19|20)\\d\\d|last (week|month|year|night|monday|tuesday|wednesday|thursday|friday|saturday|sunday)|yesterday|this morning|on (monday|tuesday|wednesday|thursday|friday|saturday|sunday))\\b"
+    },
+    {
+      "id": "number-list",
+      "name": "Numbered list",
+      "template": "{N} {things} that {outcome}:",
+      "example": "7 free tools I use to write every post on this account:",
+      "purpose": "Sets a clear, finite promise; the number tells the reader how much they get.",
+      "failure_mode": "Padding the list to hit a number, or items that are generic and unearned.",
+      "match": "^\\s*\\d{1,3}\\s+[a-z]"
+    },
+    {
+      "id": "how-i",
+      "name": "How I",
+      "template": "How I {result} (without {pain}):",
+      "example": "How I write a week of posts in one 90-minute session:",
+      "purpose": "First-person process is more credible than generic advice.",
+      "failure_mode": "The 'how' is obvious, or the result is too small to care about.",
+      "match": "^\\s*how i\\b"
+    },
+    {
+      "id": "how-to",
+      "name": "How to",
+      "template": "How to {outcome} without {common pain}:",
+      "example": "How to get your first 1,000 followers without posting 5 times a day:",
+      "purpose": "Promises a useful outcome and removes the main objection up front.",
+      "failure_mode": "Sounds like a blog headline; needs the 'without' clause to stand out.",
+      "match": "^\\s*how to\\b"
+    },
+    {
+      "id": "mistake",
+      "name": "The mistake",
+      "template": "The biggest mistake {audience} make with {topic}:",
+      "example": "The biggest mistake new freelancers make is pricing by the hour.",
+      "purpose": "Loss aversion: readers check whether they are making it.",
+      "failure_mode": "Scolding tone, or a 'mistake' everyone already knows about.",
+      "match": "\\b(biggest|most common|costliest|worst|#1|number one)\\s+mistakes?\\b|\\bmistakes?\\s+(i|you|most|everyone|people|beginners)\\s+(made|make)\\b"
+    },
+    {
+      "id": "contrarian",
+      "name": "Contrarian take",
+      "template": "Unpopular opinion: {take that cuts against consensus}.",
+      "example": "Unpopular opinion: you don't need a niche for your first 6 months.",
+      "purpose": "Disagreement invites replies and signals independent thinking.",
+      "failure_mode": "Contrarian for its own sake, or not actually unpopular.",
+      "match": "^\\s*(unpopular opinion|hot take|controversial take|hear me out|counterpoint)\\b|\\b(is|are)\\s+(overrated|underrated|a myth|a lie|dead|a scam|wrong)\\b"
+    },
+    {
+      "id": "stop-doing",
+      "name": "Stop doing",
+      "template": "Stop {common habit}. Do {alternative} instead.",
+      "example": "Stop ending every post with 'thoughts?'. Ask one specific question instead.",
+      "purpose": "A direct instruction with a replacement is easy to act on.",
+      "failure_mode": "Bossy without a reason; the alternative must be concrete.",
+      "match": "^\\s*(stop|quit)\\b"
+    },
+    {
+      "id": "warning",
+      "name": "Warning",
+      "template": "Don't {do X} until you {check Y}.",
+      "example": "Don't sign a client contract until you check these 4 clauses.",
+      "purpose": "Protects the reader from a specific, costly outcome.",
+      "failure_mode": "Fear-mongering when the risk is small or rare.",
+      "match": "^\\s*(warning|psa|reminder|heads up)\\b|\\bdon'?t\\s+.{1,60}\\s+(until|before)\\s+you\\b"
+    },
+    {
+      "id": "truth-about",
+      "name": "The truth about",
+      "template": "The {uncomfortable} truth about {topic}:",
+      "example": "The uncomfortable truth about going viral: it rarely brings customers.",
+      "purpose": "Promises honesty the reader suspects they are not getting elsewhere.",
+      "failure_mode": "The 'truth' is a cliche, which breaks the promise immediately.",
+      "match": "\\b(the|an?)\\s+(uncomfortable |hard |brutal |honest )?truth about\\b|^\\s*hard truth\\b"
+    },
+    {
+      "id": "curiosity-gap",
+      "name": "Nobody talks about",
+      "template": "Nobody talks about {overlooked part of a familiar thing}.",
+      "example": "Nobody talks about how lonely the first year of freelancing is.",
+      "purpose": "Opens a gap between what the reader knows and what they are about to learn.",
+      "failure_mode": "Plenty of people do talk about it; readers notice and leave.",
+      "match": "\\b(nobody|no one|few people|most people don'?t)\\s+(talks? about|tells? you|is talking about|mentions?|realizes?|knows?)\\b"
+    },
+    {
+      "id": "data-point",
+      "name": "Surprising stat",
+      "template": "{Specific stat} of {group} {surprising fact}.",
+      "example": "68% of my best-performing posts were under 100 characters.",
+      "purpose": "A precise number is concrete and easy to remember.",
+      "failure_mode": "Unsourced or invented numbers. Only use data you actually have.",
+      "match": "\\b\\d+(\\.\\d+)?\\s?%|\\b\\d+\\s+(out of|in)\\s+\\d+\\b"
+    },
+    {
+      "id": "research-insider",
+      "name": "I studied N things",
+      "template": "I {analyzed / interviewed / read} {N} {things}. Here's the pattern:",
+      "example": "I read 200 cold emails that got replies. 3 patterns showed up again and again:",
+      "purpose": "Borrowed authority from effort the reader did not have to spend.",
+      "failure_mode": "The effort is fake or the 'pattern' is obvious.",
+      "match": "^\\s*i\\s+(analy[sz]ed|studied|interviewed|reviewed|read|tested|tried|spent|watched|surveyed|tracked|asked)\\b"
+    },
+    {
+      "id": "comparison",
+      "name": "A vs B",
+      "template": "{Option A} vs {Option B}: {verdict}",
+      "example": "Threads vs single posts: what 6 months of my data says.",
+      "purpose": "Readers who face the choice self-select in.",
+      "failure_mode": "No verdict, or a verdict that is 'it depends'.",
+      "match": "\\b(vs\\.?|versus)\\b"
+    },
+    {
+      "id": "prediction",
+      "name": "Prediction",
+      "template": "In {N} years, {bold but defensible prediction}.",
+      "example": "In 3 years, 'prompt engineer' won't be a job title. Here's what replaces it.",
+      "purpose": "Future-facing claims invite debate and replies.",
+      "failure_mode": "Unfalsifiable hype with no reasoning behind it.",
+      "match": "^\\s*in\\s+(\\d+|a few|two|three|five|ten)\\s+(years?|months?)\\b|\\bwill\\s+(be dead|replace|disappear|be gone|die)\\b|\\bby\\s+20\\d\\d\\b"
+    },
+    {
+      "id": "callout",
+      "name": "Audience callout",
+      "template": "If you're a {specific audience} who {struggle}, read this.",
+      "example": "If you're a designer who hates selling, this is the only script you need.",
+      "purpose": "Naming the reader stops the right people and filters the wrong ones.",
+      "failure_mode": "The audience is so broad ('if you're a human') it calls out nobody.",
+      "match": "^\\s*if\\s+you('re| are)?\\b"
+    },
+    {
+      "id": "past-self",
+      "name": "Advice to past self",
+      "template": "If I were starting {X} today, I'd {do this}:",
+      "example": "If I were starting on X today with 0 followers, I'd do these 5 things:",
+      "purpose": "Hindsight framing feels earned and practical.",
+      "failure_mode": "Advice that only works because of the head start you now have.",
+      "match": "\\bif i (were|was|had to) (start|starting|begin|beginning|do it)|\\b(my )?(younger|\\d+[- ]year[- ]old) self\\b|\\bwish i('d)? (had )?known\\b"
+    },
+    {
+      "id": "steal-this",
+      "name": "Steal this",
+      "template": "Steal my {template / script / structure}:",
+      "example": "Steal my 4-line structure for posts that get replies:",
+      "purpose": "Promises an immediately usable asset; drives bookmarks.",
+      "failure_mode": "The asset is thin, which teaches people to skip your next one.",
+      "match": "^\\s*(steal|copy|bookmark|save|grab)\\s+(my|this|these)\\b"
+    },
+    {
+      "id": "framework",
+      "name": "Named framework",
+      "template": "The {named} framework I use for {outcome}:",
+      "example": "The 3-question framework I use before writing any post:",
+      "purpose": "A named, repeatable system feels more valuable than tips.",
+      "failure_mode": "Renaming common sense as a 'framework'.",
+      "match": "\\b(framework|system|playbook|formula|checklist|template|blueprint|process)\\b"
+    },
+    {
+      "id": "news-breakdown",
+      "name": "News breakdown",
+      "template": "{Company or person} just {did X}. Here's what it means for {audience}:",
+      "example": "Acme just raised prices 3x. Here's what small teams should do instead.",
+      "purpose": "Rides existing attention and adds your interpretation.",
+      "failure_mode": "Restating the news with nothing added, or getting the facts wrong.",
+      "match": "^\\s*(?!(I|We|You|They|My|Our|This|It|He|She)\\b)(?-i:[A-Z])[\\w&.'-]*(\\s+(?-i:[A-Z])[\\w&.'-]*)?\\s+(just\\s+)?(raised|launched|acquired|bought|sold|shut down|laid off|announced|released|banned|changed|killed|cut|dropped)\\b"
+    },
+    {
+      "id": "heres-how",
+      "name": "Here's why / how",
+      "template": "Here's why {surprising outcome}:",
+      "example": "Here's why your posts get views but no followers:",
+      "purpose": "Names a problem the reader has and promises the cause.",
+      "failure_mode": "Generic; works only if the problem in the line is specific.",
+      "match": "^\\s*here'?s\\s+(how|why|what)\\b"
+    },
+    {
+      "id": "question",
+      "name": "Direct question",
+      "template": "{Specific question your audience has opinions about}?",
+      "example": "What's the one tool you'd keep if you could only keep one?",
+      "purpose": "Invites replies directly; works best when anyone in the niche can answer.",
+      "failure_mode": "Vague questions ('thoughts?') or ones with an obvious answer.",
+      "match": "^[^\\n]{3,140}\\?\\s*$"
+    },
+    {
+      "id": "one-liner",
+      "name": "One-liner",
+      "template": "{Short, quotable truth}.",
+      "example": "Clarity beats cleverness. Every time.",
+      "purpose": "Easy to agree with, easy to repost.",
+      "failure_mode": "A fortune-cookie line with nothing behind it.",
+      "match": "^\\s*\\S+(\\s+\\S+){0,7}\\s*$"
+    }
+  ]
+}
