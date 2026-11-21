@@ -48,42 +48,132 @@ until you publish it yourself.
 
 ## Install
 
-Requires Python 3.9 or newer. On Windows, use `python` or `py -3` wherever
-the docs say `python3`.
+### Before you install
 
-Clone the repo, then copy **all** the skill folders into your tool's skills
-folder. Keep them together: `x-viral` and `x-stats` read
-`x-post/hooks.json`, and other skills hand off to each other.
+- **Python 3.9 or newer**, for the scripts.
+  - macOS: check with `python3 --version`. If it is missing, install it from
+    [python.org](https://www.python.org/downloads/) or with `brew install python`.
+  - Windows: install it from [python.org](https://www.python.org/downloads/)
+    or with `winget install Python.Python.3.12`, then check with
+    `python --version`. Use `python` or `py -3` wherever the docs say
+    `python3`. On Windows, `python3` often opens the Microsoft Store instead
+    of running Python.
+- **Node.js**, only for the one-command install below (it provides `npx`).
+
+Install **all 9 skills together**. `x-viral` and `x-stats` read
+`x-post/hooks.json`, and the skills hand off to each other.
+
+### Option 1: one command (macOS, Linux and Windows)
+
+The same command works in Terminal on macOS, in PowerShell, and in Command
+Prompt:
+
+```bash
+npx skills add raza001/x-agent-skill -g -a claude-code -s "*" -y --copy
+```
+
+| Flag | What it does |
+| --- | --- |
+| `-g` | Installs for your user, so the skills work in every project. Without it, they go into the folder you ran the command from. |
+| `-a claude-code` | Installs for Claude Code only. |
+| `-s "*"` | Installs all 9 skills. |
+| `-y` | Skips the prompts. |
+| `--copy` | Puts real files in the Claude folder instead of links. |
+
+The skills end up here:
+
+| System | Folder |
+| --- | --- |
+| macOS / Linux | `~/.claude/skills/x-post/`, `~/.claude/skills/x-thread/`, ... |
+| Windows | `C:\Users\<you>\.claude\skills\x-post\`, ... |
+
+Check that they are there, then restart Claude Code or start a new session:
+
+```bash
+# macOS / Linux
+ls ~/.claude/skills
+```
+
+```powershell
+# Windows PowerShell
+Get-ChildItem "$HOME\.claude\skills"
+```
+
+```bat
+:: Windows Command Prompt
+dir "%USERPROFILE%\.claude\skills"
+```
+
+If you run plain `npx skills add raza001/x-agent-skill` instead, it asks
+questions. Pick all skills, **Claude Code** as the agent, and **Global** when
+it asks where to install.
+
+**If the skills did not land in `~/.claude/skills`:**
+
+- **You ran it without `-g`:** it installed into `.claude/skills/` inside the
+  folder you were in, and wrote a `skills-lock.json` file there.
+- **You picked other agents as well:** the CLI also put copies in their
+  folders, for example `~/.agents/skills/`. Run the command above to get a
+  copy in the Claude folder.
+
+Keep them current, or remove them:
+
+```bash
+npx skills list -g
+npx skills update -g -y
+npx skills remove x-post x-thread x-human x-viral x-trending x-stats x-profile x-reply x-plan -g -a claude-code -y
+```
+
+The remove command names the 9 skills on purpose. Do not use `-s "*"` with
+`remove`: it would delete every global skill you have, not just these.
+
+### Option 2: manual install (git clone and copy)
+
+macOS / Linux (Terminal):
 
 ```bash
 git clone https://github.com/raza001/x-agent-skill.git
+mkdir -p ~/.claude/skills
+cp -R x-agent-skill/skills/* ~/.claude/skills/
 ```
 
-| Tool | Personal skills folder | Copy command (macOS/Linux) |
-| --- | --- | --- |
-| Claude Code | `~/.claude/skills/` | `cp -r x-agent-skill/skills/* ~/.claude/skills/` |
-| OpenAI Codex CLI | `~/.codex/skills/` | `cp -r x-agent-skill/skills/* ~/.codex/skills/` |
-| Gemini CLI | `~/.gemini/skills/` | `cp -r x-agent-skill/skills/* ~/.gemini/skills/` |
-| Cursor | `~/.cursor/skills/` | `cp -r x-agent-skill/skills/* ~/.cursor/skills/` |
-| GitHub Copilot | `.github/skills/` inside a repository | `cp -r x-agent-skill/skills/* .github/skills/` |
-
-Or with the `skills` CLI:
-
-```bash
-npx skills add raza001/x-agent-skill
-```
-
-On Windows (PowerShell), for example for Claude Code:
+Windows (PowerShell):
 
 ```powershell
+git clone https://github.com/raza001/x-agent-skill.git
 New-Item -ItemType Directory -Force "$HOME\.claude\skills" | Out-Null
-Copy-Item -Recurse -Force x-agent-skill\skills\* "$HOME\.claude\skills\"
+Copy-Item -Recurse -Force .\x-agent-skill\skills\* "$HOME\.claude\skills\"
 ```
+
+Windows (Command Prompt):
+
+```bat
+git clone https://github.com/raza001/x-agent-skill.git
+xcopy /E /I /Y "x-agent-skill\skills" "%USERPROFILE%\.claude\skills"
+```
+
+No git? On the GitHub page, click **Code > Download ZIP**, unzip it, and copy
+the folders inside `skills/` into the folder for your tool.
+
+### Other tools
+
+Copy the same 9 folders into your tool's skills folder:
+
+| Tool | macOS / Linux | Windows |
+| --- | --- | --- |
+| Claude Code | `~/.claude/skills/` | `%USERPROFILE%\.claude\skills\` |
+| OpenAI Codex CLI | `~/.codex/skills/` | `%USERPROFILE%\.codex\skills\` |
+| Gemini CLI | `~/.gemini/skills/` | `%USERPROFILE%\.gemini\skills\` |
+| Cursor | `~/.cursor/skills/` | `%USERPROFILE%\.cursor\skills\` |
+| GitHub Copilot | `.github/skills/` in a repository | `.github\skills\` in a repository |
+
+To use the `skills` CLI for another tool, run
+`npx skills add raza001/x-agent-skill -g` and pick that tool from the list.
 
 Skill folder locations and support differ between tools and change between
 versions. If a tool does not pick the skills up, check its documentation for
-the current path, and restart it after copying. Claude Code also accepts
-project-level skills in `.claude/skills/`.
+the current path, and restart it after copying. Claude Code also reads
+project-level skills from `.claude/skills/` inside a project.
 
 Commands inside each `SKILL.md` use paths from the repo root (for example
 `python3 skills/x-post/lint.py draft.txt`). When the skills are installed
